@@ -1,0 +1,933 @@
+@charset "utf-8";
+
+@import url(../css/font.css);
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+html {
+    overflow: hidden;
+}
+header {
+
+}
+nav {
+    position: relative;
+}
+.container {
+    overflow: hidden;
+    position: relative;
+    height: 250vh;
+}
+.nav {
+    position: absolute;
+    width: 30%;
+    height: 100px;
+    top: 0; right: 0;
+    z-index: 999;
+}
+.nav ul {
+    float: right;
+    padding-right: 30px;
+}
+.nav ul li{
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 25px;
+}
+.nav ul li a {
+    display: block;
+}
+.nav ul li:last-child{
+    margin-right: 0;
+}
+.nav ul li img {
+    vertical-align: top;
+}
+/* nav */
+.social_nav {
+   position: fixed;
+   bottom: 15px; right: 10px;
+   z-index: 999;
+}
+.social_nav ul {
+    width: 35px;
+    height: 110px;
+}
+.social_nav ul li{
+    display: block;
+}
+.social_nav ul li a {
+    display: block;
+    width: 30px; height: 30px;
+}
+.social_nav ul li button {
+    display: block;
+    margin: 0 auto;
+    width: 35px; height: 30px;
+}
+.social_nav ul li button.bgm{
+    position: absolute;
+    left: -3px;
+    background: url(../img/bgm_btn.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.social_nav ul li a.twitter{
+    position: absolute;
+    top: 40px;
+    background: url(../img/twitter.png) no-repeat;
+    background-size: cover;
+}
+.social_nav ul li a.discord{
+    position: absolute;
+    top: 80px;
+    background: url(../img/discord.png) no-repeat;
+    background-size: cover;
+}
+.social_nav ul li a.strm{
+    position: absolute;
+    top: 120px;
+    background: url(../img/strm.png) no-repeat;
+    background-size: cover;
+}
+/* social_nav */
+body.start {
+    overflow: hidden;
+}
+body.before-load {
+    overflow: hidden;
+    background: url(../img/bg.jpg) no-repeat center center;
+}
+.before-load .container {
+    display: none;
+}
+body.start .container{
+    display: block;
+}
+body.start .start_scene {
+    display: none;
+}
+.start_scene {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0; left: 0;
+    background: rgba(0,0,0,0.5); 
+    z-index: 999;
+}
+.start_bgm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 500px;
+    background: url(../img/music_start.png)no-repeat bottom center;
+    background-size: cover;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+/* bgm */
+.main {
+    overflow-y: hidden;
+}
+.main.scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+body {
+    cursor: none;
+    background: url(../img/bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+.cursor {
+    width: 58px; height: 50px;
+    position: absolute; left: 0; top: 0; 
+    background: url(../img/catfoot.png);
+    background-size: cover;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+}
+body.on .first_scene {
+    display: none;
+}
+/* body */
+.first_scene {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+}
+.first_scene .title {
+    position: absolute;
+    display: inline-block;
+    width: 250px;
+    height: 140px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-70%) scale(1.5);
+}
+.first_scene .title img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+}
+.first_scene .line_change {
+    position: absolute;
+    top: 100px;
+    width: 300px; height: 100px;
+    display: block;
+}
+.first_scene .logo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+}
+.first_scene .title img{
+    transition: all .2s;
+    opacity: 0;
+}
+.first_scene .title img.a {
+    width: 55px;
+    top: 37px;
+    left: -21.5px;
+}
+.first_scene .title img.u {
+    width: 57px;
+    top: 44px;
+    left: 35px;
+}
+.first_scene .title img.r {
+    width: 43px;
+    top: 43px;
+    left: 84px;
+}
+.first_scene .title img.logo_planet {
+    width: 88px;
+    top: 38px;
+    left: 154px;
+}
+.first_scene .title img.r2 {
+    width: 43px;
+    top: 43.3px;
+    left: 224px;
+}
+.first_scene .title img.a_cat {
+    width: 53px;
+    top: 25px;
+    left: 271px;
+
+}
+.first_scene .title img.c {
+    width: 46px;
+    top: 30px;
+    left: 73px;
+
+}
+.first_scene .title img.a_lower {
+    width: 53px;
+    top: 29px;
+    left: 122px;
+
+}
+.first_scene .title img.t {
+    width: 52px;
+    top: 29px;
+    left: 173px;
+}
+.cat {
+    position: absolute;
+    bottom: -50px; left: -50px;
+    transform: translate(0px, 0px);
+    z-index: 3;
+    transition: 1s ease-in-out;
+}
+.cat img {
+    width: 300px;
+}
+body.on .cat {
+    transform: translate(-500px, 500px);
+}
+/* first animation */
+.scene01 {
+    position: absolute;
+    max-width: 1400px; height: 100vh;
+    margin: 0 auto;
+    top: 0; right: 0; left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3;
+}
+body.on .scene01 {
+    opacity: 1;
+    visibility: visible;
+}
+.scene01 .title {
+    position: absolute;
+    top: 49.5%; left:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    z-index: 3;
+}
+.scene01 .title .logo {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50.1%,-57%);
+    z-index: 2;
+}
+.scene01 .title .logo img {
+    width: 525px;
+}
+.scene01 .title .ufo {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-220%,-170%) scale(0);
+    transition: .5s ease-out;
+    transition-delay: 2.2s;
+    cursor: pointer;
+}
+.scene01 .title .ufo img {
+    width: 150px;
+}
+.earth {
+    position: relative;
+    width: 125px;
+    top: 650px; left: 50%;
+    transform: translate(-50%,0) scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 2.2s;
+}
+body.on .scene01 .earth {
+    transform: translate(-50%,0) scale(1);
+}
+.scene01 .earth .earthborder {
+    position: absolute;
+    top: 0; left: 0;
+    transform-origin: center;
+    animation: rotate 5s linear infinite;
+}
+.scene01 .earth img:nth-child(1) {
+    position: absolute;
+    top: 0;left: 0;
+    width: 125px;
+}
+body.on .scene01 .title .ufo {
+    transform: translate(-220%,-170%) scale(1);
+    z-index: 1;
+}
+.scroll_ani {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+}
+.rocket {
+    position: absolute;
+    width: 314px;
+    bottom: -50px;
+}
+.rocket img {
+    width: 314px;
+    transform: translate(10px, 300px);
+}
+body.on .rocket img {
+    animation: rocket 2s cubic-bezier(0.39, -0.02, 0, 1.01);
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+/* scene01 */
+
+.planet-stroy {
+    position: relative;
+    max-width: 1400px;
+    height: 800px;
+}
+.planet-stroy .pink {
+    position: absolute;
+    width: 65px;
+    top: 550px; left: 40px;
+}
+.planet-stroy .pink > a {
+    position: relative;
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 2.2s;
+    z-index: 2;
+}
+.planet-stroy .pink > a > img {
+    animation: rotate 5s linear infinite;
+}
+.planet-stroy .pink .view {
+    display: none;
+    position: absolute;
+    transform-origin: top;
+    width: 437px;
+    height: 158px;
+    top: 30px;
+    left: 30px;
+    background: url(../img/gray_view.png)no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+.planet-stroy .purple {
+    position: absolute;
+    width: 100px;
+    top: 800px; left: 200px;
+}
+.planet-stroy .purple > a {
+    position: relative;
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 2.2s;
+    z-index: 2;
+}
+.planet-stroy .purple .view {
+    display: none;
+    position: absolute;
+    transform-origin: top;
+    width: 437px;
+    height: 158px;
+    top: 65px;
+    left: 60px;
+    background: url(../img/purple_view.png)no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+.planet-stroy .red {
+    position: absolute;
+    width: 87px;
+    top: 800px;
+    left: 950px;
+}
+.planet-stroy .red > a {
+    position: relative;
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 2.2s;
+    z-index: 2;
+}
+.planet-stroy .red .view {
+    display: none;
+    position: absolute;
+    transform-origin: top;
+    width: 437px;
+    height: 158px;
+    top: 30px;
+    left: 30px;
+    background: url(../img/red_view.png)no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+body.on .scene01 .planet-stroy .red > a,
+body.on .scene01 .planet-stroy .purple > a
+ {
+    animation: updown 5s alternate infinite;
+    -webkit-animation: updown 5s alternate infinite;
+    -moz-animation: updown 5s alternate infinite;
+    -o-animation: updown 5s alternate infinite;
+    animation-delay: 5s;
+    transform: scale(1);
+}
+body.on .scene01 .planet-stroy .purple > a {
+    animation-delay: 3s;
+}
+body.on .scene01 .planet-stroy .pink > a {
+    transform: scale(1);
+}
+/* planet-stroy01 */
+
+.planet-stroy02 {
+    position: relative;
+    max-width: 1400px;
+    height: 930px;
+}
+.planet-stroy02 .mars {
+    position: absolute;
+    width: 150px;
+    top: 235px;
+    left: 435px;
+}
+.planet-stroy02 .mars > a {
+    position: relative;
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 2.2s;
+    z-index: 2;
+}
+.planet-stroy02 .mars > a > img {
+    animation: reverserotate 20s linear infinite;
+}
+.planet-stroy02 .mars .view {
+    display: none;
+    position: absolute;
+    transform-origin: top;
+    width: 439px;
+    height: 158px;
+    top: 110px;
+    left: 100px;
+    background: url(../img/gold_view.png)no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+.planet-stroy02 .blue {
+    position: absolute;
+    width: 350px;
+    top: 700px;
+    left: 550px;
+}
+.planet-stroy02 .blue > a {
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 2.2s;
+}
+.planet-stroy02 .blue > a > img {
+    position: absolute;
+    top: 0;
+}
+.planet-stroy02 .blue > a > img:nth-child(1) {
+    width: 130px;
+    top: -105px; left: 110px;
+    z-index: 3;
+}
+.planet-stroy02 .saturns {
+    position: absolute;
+    width: 260px;
+    top: 390px;
+    left: 1000px;
+}
+.planet-stroy02 .saturns > a > img {
+    transition: .3s ease-in-out;
+}
+.planet-stroy02 .saturns > a >img:nth-child(1) {
+    position: absolute;
+    width: 100px;
+    opacity: 1;
+    top: -100px;
+    left: 77px;
+    z-index: 3;
+}
+.planet-stroy02 .saturns > a >img:nth-child(2) {
+    position: absolute;
+    opacity: 1;
+    top: 0;
+}
+.planet-stroy02 .saturns > a > img:nth-child(3) {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+}
+.planet-stroy02 .saturns:hover a > img:nth-child(3)  {
+    opacity: 1;
+}
+.planet-stroy02 .saturns > a {
+    position: relative;
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 2.2s;
+}
+.gallery {
+    position: relative;
+    right: 0;
+    height: 435px;
+}
+.gallery_planet {
+    position: absolute;
+    top: 00px;
+    right: 20px;
+}
+.gallery_planet a > img {
+    width: 300px;
+}
+body.on .scene01 .planet-stroy02 .mars > a,
+body.on .scene01 .planet-stroy02 .blue > a,
+body.on .scene01 .planet-stroy02 .saturns > a {
+    transform: scale(1);
+}
+body.on .scene01 .planet-stroy02 .saturns > a {
+    animation: updown 5s alternate infinite;
+    -webkit-animation: updown 5s alternate infinite;
+    -moz-animation: updown 5s alternate infinite;
+    -o-animation: updown 5s alternate infinite;
+    animation-delay: 3s;
+}
+body.on .scene01 .planet-stroy02 .blue > a {
+    animation: updown 5s alternate infinite;
+    -webkit-animation: updown 5s alternate infinite;
+    -moz-animation: updown 5s alternate infinite;
+    -o-animation: updown 5s alternate infinite;
+    animation-delay: 3.2s;
+}
+.gallery .gallery_planet > a {
+    position: relative;
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 3s;
+}
+body.on .gallery .gallery_planet > a {
+    transform: scale(1);
+    animation: updown 5s alternate infinite;
+    -webkit-animation: updown 5s alternate infinite;
+    -moz-animation: updown 5s alternate infinite;
+    -o-animation: updown 5s alternate infinite;
+    animation-delay: 5s;
+}
+/* planet-stroy02 */
+.mobile_view {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+    z-index: 5;
+}
+.mobile_view.on {
+    opacity: 1;
+    visibility: visible;
+}
+.mobile_view .view_desc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding-left: 0;
+    text-align: center;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 100%;
+    height: 300px;
+    background: url(../img/desc_board.png) no-repeat center center;
+    background-size: cover;
+}
+.mobile_view .view_desc h2 {
+    position: absolute;
+    top: 0; left: 50%;
+    margin-top: 10px;
+    transform: translate(-50%,0);
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'HANSIP';
+}
+.mobile_view .view_desc p {
+    margin-top: 10px;
+    width: 90%;
+}
+.view_desc {
+    display: flex;
+    align-items: center;
+    padding-left: 135px;
+    height: 145px;
+}
+.view_desc p {
+    line-height: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'HANSIP';
+}
+/* planet strot desc */
+
+.item_preview {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0; left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+}
+.item_preview.active {
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+}
+.item_preview .saturns {
+    opacity: 0; visibility: hidden;
+    transition: .5s ease-in-out;
+}
+.item_preview .blue {
+    opacity: 0; visibility: hidden;
+    transition: .5s ease-in-out;
+}
+.item_preview .saturns.active {
+    opacity: 1; visibility: visible;
+}
+.saturns_ground {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/saturns_ground.png)no-repeat center bottom;
+    background-size: cover;
+    transition: .5s ease-in-out;
+}
+.item_preview.active .saturns.active .saturns_ground {
+    transform: translateY(0px);
+}
+.saturns_back {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/saturns_bg02.png)no-repeat center bottom;
+    background-size: cover;
+    transition: .5s ease-in-out;
+    transition-delay: .5s;
+    opacity: 0;
+}
+.item_preview.active .saturns.active .saturns_back {
+    opacity: 1;
+}
+.item_preview .blue.active {
+    opacity: 1; visibility: visible;
+}
+.blue_ground {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/blue_ground.png)no-repeat center bottom;
+    background-size: cover;
+    transition: .5s ease-in-out;
+}
+.item_preview.active .blue.active .blue_ground {
+    transform: translateY(0px);
+}
+.blue_back {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/blue_back.png)no-repeat center bottom;
+    background-size: cover;
+    transition: .5s ease-in-out;
+    transition-delay: .5s;
+    opacity: 0;
+}
+.item_preview.active .blue.active .blue_back {
+    opacity: 1;
+}
+.item_preview.active .saturns.active .planet_cat {
+    transform: translateY(0px);
+}
+.item_preview.active .blue.active .planet_cat {
+    transform: translateY(0px);
+}
+.item_preview .planet_cat {
+    position: absolute;
+    bottom: -10px; right: 200px;
+    width: 430px;
+    transition: .5s ease-in-out;
+    transition-delay: 1s;
+    z-index: 3;
+    cursor: pointer;
+}
+.text_box {
+    display: none;
+    position: absolute;
+    top: 170px; left: 50%;
+    transform: translate(-50%,0%);
+    width: 708px;
+    height: 455px;
+    background: url(../img/desc_board.png) no-repeat;
+    background-size: cover;
+}
+.text_box h2 {
+    position: absolute;
+    margin-top: 18px;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 18px;
+    color: #fff;
+    font-family: 'HANSIP';
+}
+.text_box p {
+    padding: 130px 80px;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'HANSIP';
+}
+.close {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/main_close_btn.png) no-repeat center center;
+}
+/* item_preview */
+.mobile_item_preview {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0; left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+}
+/* main */
+.bg_galaxy {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+}
+.bg_galaxy .galaxy {
+    position: absolute;
+    width: 100px;
+    top: -30px;
+    left: -250px;
+    animation: fadeinout 10s linear infinite;
+}
+.bg_galaxy .galaxy02 {
+    position: absolute;
+    width: 50px;
+    top: 150px;
+    left: 850px;
+    animation: fadeinout 10s linear infinite;
+}
+.bg_galaxy .galaxy03 {
+    position: absolute;
+    width: 40px;
+    top: 520px;
+    left: 1160px;
+    animation: reversefadeinout 10s linear infinite;
+}
+.bg_galaxy .galaxy04 {
+    position: absolute;
+    width: 30px;
+    top: 190px;
+    left: 1500px;
+    animation: fadeinout 10s linear infinite;
+}
+.bg_galaxy .galaxy05 {
+    position: absolute;
+    width: 30px;
+    top: 800px;
+    left: 900px;
+    animation: reversefadeinout 10s linear infinite;
+}
+.bg_galaxy .galaxy06 {
+    position: absolute;
+    width: 30px;
+    top: 550px;
+    left: 300px;
+    animation: fadeinout 10s linear infinite;
+}
+.moon_cat {
+    position: absolute;
+    bottom: -350px; left: -350px;
+    z-index: 1;
+}
+.moon_item{
+    position: relative;
+    top: 0; left: 0;
+    width: 300px; height: 300px;
+}
+.moon {
+    position: absolute;
+    bottom: -92px;
+    left: 105px;
+    width: 755px;
+    z-index: 4;
+}
+.gold_cat {
+    position: absolute;
+    top: -490px;
+    left: 352px;
+    width: 122px;
+    z-index: 3;
+}
+.supercat {
+    position: absolute;
+    top: -660px;
+    left: 350px;
+    width: 320px;
+    z-index: 2;
+}
+.galaxy_cat {
+    position: absolute;
+    top: -482px;
+    left: 585px;
+    width: 190px;
+    z-index: 3;
+}
+.bg_star {
+    width: 100%;
+    height: 200vh;
+    background: url(../img/star.png) repeat-y;
+    animation: star 10s infinite cubic-bezier(0.34, 0.26, 0, 0.99);
+    z-index: 1;
+}
+.bg_star02 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/star02.png) no-repeat;
+    background-size: 100%;
+    animation: blur 5s infinite;
+    z-index: 1;
+}
+.bg_star03 {
+    position: absolute;
+    top: -500px;
+    left: 3000px;
+    width: 100%;
+    height: 200vh;
+    background: url(../img/star.png) repeat-y;
+    animation: star02 20s infinite cubic-bezier(0.34, 0.26, 0.6, 0.99);
+    z-index: 1;
+}
+.bottom {
+    transform: translateY(500px);
+}
+.blur {
+    animation: fadeblur 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.blurout {
+    animation: fadeoutblur 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.gallery_view {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 99;
+}
+.gallery_view.on {
+    opacity: 1;
+    visibility: visible;
+}
+iframe {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border: none;
+    height: 90vh;
+    width: 90vw;
+    border-radius: 10px;
+}

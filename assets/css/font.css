@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+@font-face {
+    src: url("../fonts/Daydream.ttf");
+    font-family: "Daydream";
+}
+@font-face {
+    src: url("../fonts/LOMTRIAN.TTF");
+    font-family: "Lomtrian";
+}
+@font-face {
+    src: url("../fonts/HANSIP.OTF");
+    font-family: "HANSIP";
+}
