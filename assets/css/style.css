@@ -18,7 +18,7 @@ nav {
 .container {
     overflow: hidden;
     position: relative;
-    height: 250vh;
+    height: 2500px;
 }
 .nav {
     position: absolute;

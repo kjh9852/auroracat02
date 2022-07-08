@@ -21,7 +21,7 @@ var reachedBottom = false;
 var stopScroll = false;
 var isFilter = false;
 
-fetch(`https://aurora-cat.com/meta.json`)
+fetch(`https://kjh9852.github.io/auroracat02/meta.json`)
 	.then(function (response) {
 		return response.json();
 	})
