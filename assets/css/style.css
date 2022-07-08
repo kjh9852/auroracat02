@@ -720,29 +720,35 @@ body.on .gallery .gallery_planet > a {
     opacity: 1;
 }
 .item_preview.active .saturns.active .planet_cat {
-    transform: translateY(0px);
+    transform: translate(45%,0px);
 }
 .item_preview.active .blue.active .planet_cat {
-    transform: translateY(0px);
+    transform: translate(45%,0px);
 }
 .item_preview .planet_cat {
     position: absolute;
-    bottom: -10px; right: 200px;
+    bottom: -10px; left: 50%;
     width: 430px;
     transition: .5s ease-in-out;
     transition-delay: 1s;
     z-index: 3;
-    cursor: pointer;
 }
 .text_box {
-    display: none;
     position: absolute;
-    top: 170px; left: 50%;
-    transform: translate(-50%,0%);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-65%);
     width: 708px;
     height: 455px;
     background: url(../img/desc_board.png) no-repeat;
     background-size: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+    transition-delay: 1.5s;
+}
+.item_preview.active .text_box {
+    opacity: 1;
+    visibility: visible;
 }
 .text_box h2 {
     position: absolute;
@@ -895,6 +901,9 @@ body.on .gallery .gallery_planet > a {
 }
 .bottom {
     transform: translateY(500px);
+}
+.cat_bottom {
+    transform: translate(45%,500px);
 }
 .blur {
     animation: fadeblur 1s ease-in-out;

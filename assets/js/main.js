@@ -1,8 +1,5 @@
 (() => {
   const ufo = document.querySelector('.ufo');
-  const rocket = document.querySelector('.rocket');
-  const rocketView = document.querySelector('.rocket_view');
-  const firstScene = document.querySelector('.first_scene');
   const cursor = document.querySelector('.cursor');
   const saturns = document.querySelector('.planet-stroy02 .saturns > a');
   const saturnsView = document.querySelector('.item_preview .saturns');
@@ -10,7 +7,6 @@
   const blueView = document.querySelector('.item_preview .blue');
   const preViewWrap = document.querySelector('.item_preview');
   const close = document.querySelectorAll('.close');
-  const planetCat = document.querySelector('.planet_cat');
   const start = document.querySelector('.start_bgm');
   const mSaturnsPreview = document.querySelector('.planet-stroy02 > .saturns > .mobile_view');
   const mSaturnsClose = document.querySelector('.planet-stroy02 > .saturns > .mobile_view .close');
@@ -34,11 +30,6 @@
       }
   })
   
-  // rocket.addEventListener('click', () => {
-  //     rocket.classList.add('rocket_on');
-  //     rocketView.classList.add('active');
-  // });
-
   $(document).ready(function () {
     var menuMotion = true;
     $(".planet-stroy02 > div").hover(function () {
@@ -66,16 +57,6 @@
     );
   });
 
-  $(".planet_cat").on('click',() => {
-    let mode = false
-    if($(this).parent.hasClass = 'active'){
-      mode = true;
-      $('.text_box').slideDown();
-    }else {
-      $('.text_box').slideUp();
-    }
-  });
-
   function preview(index, indexView, viewWrap, close) {
     if(!mobile) {
       index.addEventListener('click', (e) => {
@@ -95,14 +76,17 @@
 
   function mainScroll() {
     $('.start_bgm').stop().on("touchstart click", function (e) {
-      var chk = $('.first_scene').attr("data-stop");
-      if (chk == "0") {
-        $('.first_scene').attr("data-stop", "1");
-        $('body').addClass('on');
-        setTimeout(function () {
-          scrollStart()
-        }, 500);
-      }
+      gsap.to($(".first_scene").find(".title img"), 0.8, { scale: 1, y: 0, stagger: { from: "start", each: 0.08 }, opacity: 1, ease: Power4.out });
+      setTimeout(() => {
+        var chk = $('.first_scene').attr("data-stop");
+        if (chk == "0") {
+          $('.first_scene').attr("data-stop", "1");
+          $('body').addClass('on');
+          setTimeout(function () {
+            scrollStart()
+          }, 2000);
+        }
+      },1700);
     });
     function scrollStart() {
       setTimeout(function () {
@@ -121,10 +105,6 @@
   start.addEventListener('click',() => {
     $('body').addClass('start');
   });
-
-  // $(document).ready(function(){
-  //   gsap.to($(this).find(".title img"), 0.8, { scale: 1, y: 0, stagger: { from: "start", each: 0.08 }, opacity: 1, ease: Power4.out });
-  // });
 
   window.addEventListener("mousemove", trackMovement);
 
@@ -167,16 +147,6 @@
     preview(saturns, saturnsView, preViewWrap, close);
     preview(blue, blueView, preViewWrap, close);
     galleryOpen();
-    if (window.innerWidth > 900) {
-      window.location.reload();
-  }
-
   });
 
-  window.addEventListener('orientationchange', () => {
-    scrollTo(0, 0);
-    setTimeout(() => {
-        window.location.reload();
-    }, 500);
-});
 })();

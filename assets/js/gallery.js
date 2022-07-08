@@ -21,7 +21,7 @@ var reachedBottom = false;
 var stopScroll = false;
 var isFilter = false;
 
-fetch(`https://kjh9852.github.io/auroracat/meta.json`)
+fetch(`https://aurora-cat.com/meta.json`)
 	.then(function (response) {
 		return response.json();
 	})
@@ -35,8 +35,8 @@ fetch(`https://kjh9852.github.io/auroracat/meta.json`)
 	});
 
 function filter() {
-	var meta = isFilter ? filterData : metaData; // meta라는 변수는 isfilter가 true 면 filterdatda에 false면 metadata 값을 가져온다
-	meta = meta.slice(start, end); //meta라는 배열은 0부터 99배열까지만 잘라서 삽입
+	var meta = isFilter ? filterData : metaData;
+	meta = meta.slice(start, end);
 	console.log(meta, "here");
 
 	// if (!meta.length) {
@@ -49,7 +49,7 @@ function filter() {
 		var div = document.createElement("div");
 		var a = document.createElement("a");
 		a.setAttribute("href", meta[i].hash);
-		a.setAttribute("onclick","return false;")
+		a.setAttribute("onclick","return false;");
 		var myPara1 = document.createElement("p");
 		// console.log(meta[i].attributes)
 		var img = document.createElement("img");
@@ -101,7 +101,7 @@ function filter() {
 	$(window).on("scroll", function () {
 		if (
 			$(this).scrollTop() + $(this).innerHeight() >=
-				$(".gallery")[0].scrollHeight && // 자바스크립트로 gallery 클래스 선택과 같음
+				$(".gallery")[0].scrollHeight &&
 			!stopScroll
 		) {
 			if (!reachedBottom) {

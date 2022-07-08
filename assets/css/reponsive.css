@@ -96,6 +96,9 @@
     .rocket {
         width: 250px;
     }
+    .first_scene .title {
+        transform: translate(-50%,-66.5%) scale(1.21);
+    }
     @keyframes rocket {
         100% {
             transform: translate(217%,-140%);
@@ -172,7 +175,7 @@
     }
 }
 @media (max-width:640px) {
-    .na.container {
+    .container {
         width: 100%;
     }
     .planet-stroy .red {
@@ -180,6 +183,9 @@
     }
 }
 @media (max-width: 460px) {
+    .container {
+        height: 300vh;
+    }
     body {
         cursor: auto;
     }
@@ -222,7 +228,7 @@
         transform: translate(-50%,-63%) scale(0.7);
     }
     .scene01 .title .logo img {
-        width: 250px;
+        width: 245px;
     }
     .scene01 {
         max-width: 320px;
@@ -286,7 +292,7 @@
         top: 840px;
     }
     .gallery_planet {
-        top: 150px;
+        top: 250px;
     }
     .earth {
         width: 100px;
