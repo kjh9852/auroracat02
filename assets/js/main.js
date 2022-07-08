@@ -167,6 +167,16 @@
     preview(saturns, saturnsView, preViewWrap, close);
     preview(blue, blueView, preViewWrap, close);
     galleryOpen();
+    if (window.innerWidth > 900) {
+      window.location.reload();
+  }
+
   });
 
+  window.addEventListener('orientationchange', () => {
+    scrollTo(0, 0);
+    setTimeout(() => {
+        window.location.reload();
+    }, 500);
+});
 })();
