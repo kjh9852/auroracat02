@@ -49,7 +49,6 @@ function filter() {
 		var div = document.createElement("div");
 		var a = document.createElement("a");
 		a.setAttribute("href", meta[i].external_url);
-		a.setAttribute("onclick","return false;");
 		var myPara1 = document.createElement("p");
 		// console.log(meta[i].attributes)
 		var img = document.createElement("img");
